@@ -1,0 +1,23 @@
+#cloud-config
+
+apt_update: true
+apt_upgrade: true
+packages:
+ - python3-pip
+ - python3-dev
+ - build-essential
+
+byobu_default: system
+
+runcmd:
+ - pip3 install flask
+ - pip3 install numpy
+ - pip3 install celery
+ - sudo bash
+ - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+ - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+ - apt-get update
+ - apt-get install -y docker-ce
+ - cd /home/ubuntu
+ - sudo docker build -t work:latest ./dock/
+ - sudo docker run --name cont -td -v $(pwd):/home/fenics/shared -w /home/fenics/shared work
