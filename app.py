@@ -24,7 +24,7 @@ app = Flask(__name__)
 
 
 #initialize celery
-celery = Celery(app.name,backend='rpc://', broker='amqp://group7:group7@130.238.29.85:5672/group7host')
+celery = Celery(app.name,backend='rpc://', broker='amqp://group7:group7@130.238.28.111:5672/group7host')
 
 #launch a worker on a new VM
 def launch_worker():
