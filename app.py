@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 
 #initialize celery
-celery = Celery(app.name,backend='rpc://', broker='amqp://group7:group7@130.238.29.85:5672/group7host')
+celery = Celery(app.name,backend='rpc://', broker='amqp://group7:group7@130.238.28.111:5672/group7host')
 
 @celery.task
 def launch_analyse(param1,param2,param3,param4): #launch the analyse of 1 file with the given arguments
