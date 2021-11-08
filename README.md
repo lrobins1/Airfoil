@@ -1,5 +1,9 @@
 To run it :
-- launch rabbitqm on vm (sudo rabbitmq-server -detached)
-- cd into containers and launch a worker n each of them (celery -A app.celery worker --loglevel=info -n worker1@%h)
-- launch app on vm (python app.py)
-- make a request (curl http://130.238.28.111:5000/analyse)
+-   Install Flask, celery
+-   Source your openrc.sh file
+-   Clone this git : 
+-     git clone https://github.com/lrobins1/Airfoil.git
+-   launch app the app (python app.py)
+-   Make requests :
+-     curl http://<Your_machine_IP>:5000/new_workers/<nbr> to start new workers
+-     curl http://<Your_machine_IP>:5000/analyse to analyse some airfoil files
