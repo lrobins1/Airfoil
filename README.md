@@ -1,5 +1,13 @@
 To run it :
-- launch rabbitqm on vm (sudo rabbitmq-server -detached)
-- cd into containers and launch a worker n each of them (celery -A app.celery worker --loglevel=info -n worker1@%h)
-- launch app on vm (python app.py)
-- make a request (curl http://130.238.28.111:5000/analyse)
+2 options : 
+- Use the server running on the Airfoil-gr7 VM on the cloud : directly make requests
+
+- Setup your own server :
+-   Install Flask, celery
+-   Clone this git : 
+-     git clone https://github.com/lrobins1/Airfoil.git
+-   Setup rabbitmqserver: (create user, password, and change the broker url in the app.py file)
+-   launch app (server) (python app.py)
+-   Make requests :
+-     curl http://<Server_IP>:5000/new_workers/<nbr> to start new workers
+-     curl http://<Server_IP>:5000/analyse to analyse some airfoil files
