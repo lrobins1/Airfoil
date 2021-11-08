@@ -1,5 +1,6 @@
 To run it :
 -   Install Flask, celery
+-   Source your openrc.sh file
 -   Clone this git : 
 -     git clone https://github.com/lrobins1/Airfoil.git
 -   launch app the app (python app.py)
