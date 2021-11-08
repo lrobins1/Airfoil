@@ -7,4 +7,5 @@ To run it :
 -     python app.py
 -   Make requests :
 -     curl http://<Your_machine_IP>:5000/new_workers/<nbr> to start new workers
--     curl http://<Your_machine_IP>:5000/analyse to analyse some airfoil files
+-     curl http://<Your_machine_IP>:5000/analyse/<file> to analyse a file with a set of 10 different parameters 
+Note : <file> does not need the .msh at the end. E.g : r0a0n200, r0a27n200,...
